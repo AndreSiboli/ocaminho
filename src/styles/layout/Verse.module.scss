@@ -1,0 +1,21 @@
+.verse {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+
+    &_content {
+        p {
+            font-size: clamp(1em, 1em + 0.5vw, 1.25em);
+            line-height: 1.25em;
+        }
+    }
+
+    &_chapter {
+        display: flex;
+
+        p {
+            font-weight: bold;
+        }
+    }
+}

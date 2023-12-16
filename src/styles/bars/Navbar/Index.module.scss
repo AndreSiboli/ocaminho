@@ -1,0 +1,141 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.header {
+    padding: 0.75em 2em;
+    box-shadow: 0 0 10px #0005;
+
+    &_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+        width: 100%;
+    }
+
+    &_menu {
+        display: none;
+        z-index: 99;
+
+        @media (max-width: 900px) {
+            display: block;
+        }
+
+        .menu {
+            width: 25px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+
+            .trace {
+                display: block;
+                width: 100%;
+                height: 3px;
+                position: absolute;
+                background: variables.$secondary-color;
+                border-radius: 0.15em;
+                transition: width 0.15s ease-in-out, all 0.15s ease-in-out;
+
+                &:first-child {
+                    top: 0;
+                    right: 0;
+                    width: 50%;
+                }
+
+                &:nth-child(2) {
+                    top: calc(20px / 2 - 1.5px);
+                }
+
+                &:last-child {
+                    bottom: 0;
+                    width: 50%;
+                }
+            }
+
+            @include mix.DesktopHover {
+                &:hover {
+                    .trace {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            .menu {
+                .trace {
+                    width: 100%;
+                    background-color: variables.$dominant-color;
+
+                    &:first-child {
+                        top: 8.5px;
+                        transform: rotate(230deg);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(460deg);
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    &:last-child {
+                        bottom: 8.5px;
+                        transform: rotate(-230deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &_logo {
+        z-index: 99;
+    }
+
+    &_links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+
+        @media (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    &_search {
+        display: flex;
+        justify-content: flex-end;
+
+        .search_wrapper {
+            max-width: 300px;
+            width: 100%;
+
+            @media (max-width: 660px) {
+                display: none;
+            }
+        }
+
+        .search_button {
+            display: none;
+
+            @media (max-width: 660px) {
+                display: block;
+            }
+        }
+    }
+
+    &.active {
+        .header_logo {
+            h1 {
+                color: variables.$dominant-color;
+            }
+        }
+    }
+}

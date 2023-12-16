@@ -1,0 +1,17 @@
+@use '@/styles/_dirs/variables';
+
+.loading {
+    border-radius: 50%;
+    border: 2px solid variables.$secondary-color;
+    border-bottom: 2px solid transparent;
+    max-width: 100px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    animation: loading 1s linear infinite;
+
+    @keyframes loading {
+        to {
+            rotate: 360deg;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@use '@/styles/_dirs/variables';
+
+.menu {
+    max-width: 250px;
+    width: 0;
+    height: 100%;
+    background-color: variables.$secondary-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s ease-in-out;
+    padding: 1.5em;
+    padding-top: 4.5em;
+    z-index: 90;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+    }
+
+    &_wrapper {
+        overflow: auto;
+        height: 100%;
+        padding: 2em 0;
+        border-top: 1px solid variables.$dominant-color;
+
+        &::-webkit-scrollbar {
+            max-width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: variables.$dominant-color;
+            border-radius: 0.5em;
+        }
+    }
+
+    &_links {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        color: variables.$dominant-color;
+    }
+}

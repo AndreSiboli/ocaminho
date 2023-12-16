@@ -1,0 +1,45 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.link {
+    position: relative;
+    width: fit-content;
+    font-weight: 500;
+
+    @include mix.DesktopHover {
+        &:hover::after,
+        &:hover::before {
+            width: 100%;
+        }
+
+        &:hover::after {
+            left: 0;
+            right: auto;
+        }
+
+        &:hover::before {
+            left: auto;
+            right: 0;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            background: variables.$secondary-color;
+            transition: 0.25s ease-in-out;
+        }
+
+        &::after {
+            bottom: -0.15em;
+            right: 0;
+        }
+
+        &::before {
+            top: -0.15em;
+            left: 0;
+        }
+    }
+}

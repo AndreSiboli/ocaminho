@@ -1,0 +1,80 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.search {
+    padding: 0 2em;
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        min-height: 500px;
+        padding: 4em 0;
+    }
+
+    .verses {
+        display: flex;
+        gap: 2em;
+
+        @media (max-width: 1000px) {
+            flex-direction: column-reverse;
+        }
+
+        &_wrapper {
+            flex: 1 1 60%;
+
+            .verse {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5em;
+
+                @media (max-width: 1000px) {
+                    max-width: 600px;
+                    width: 100%;
+                }
+
+                .verse_container {
+                    padding: 1em;
+                    background-color: rgba($color: variables.$secondary-color, $alpha: 0.15);
+                    border-radius: 0.5em;
+                }
+            }
+        }
+
+        &_infos {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            @media (max-width: 1000px) {
+                flex: auto;
+                justify-content: flex-start;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                background-color: rgba($color: variables.$secondary-color, $alpha: 1);
+                height: fit-content;
+                padding: 1.5em;
+                border-radius: 0.5em;
+                position: sticky;
+                top: 1em;
+                color: variables.$dominant-color;
+                max-width: 300px;
+
+                span {
+                    font-weight: bold;
+                    color: variables.$accent-color;
+                }
+
+                @media (max-width: 1000px) {
+                    max-width: 600px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

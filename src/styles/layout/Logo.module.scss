@@ -1,0 +1,9 @@
+@use '@/styles/_dirs/variables';
+
+.logo {
+    color: variables.$secondary-color;
+
+    h1 {
+        font-size: clamp(1.25em, 1.25em + 0.5vw, 2em);
+    }
+}

@@ -1,0 +1,18 @@
+@use '@/styles/_dirs/variables';
+
+.search_button {
+    button {
+        cursor: pointer;
+        border-radius: 50%;
+        border: none;
+        padding: 0.75em;
+        margin: 0.5em;
+        background: variables.$secondary-color;
+
+        svg {
+            display: flex;
+            font-size: 1.25em;
+            color: variables.$dominant-color;
+        }
+    }
+}

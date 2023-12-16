@@ -1,0 +1,54 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.main {
+    &_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 550px;
+        padding: 3em 2em;
+    }
+
+    &_verse {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2em;
+        max-width: 550px;
+        width: 100%;
+
+        .verse_container {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+    }
+}
+
+.books {
+    padding: 0 2em;
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        gap: 5em;
+        padding: 2em 0;
+    }
+
+    &_types {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+
+        .books_wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.75em;
+
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@use '@/styles/_dirs/variables';
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    background: #0002;
+    border-radius: 2.5em;
+    border: 2px solid transparent;
+
+    &:has(input:focus) {
+        border-color: variables.$secondary-color;
+    }
+
+    input {
+        border: none;
+        height: 100%;
+        outline: none;
+        padding: 1em;
+        background: transparent;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    &_button {
+        button {
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            padding: 0.75em;
+            margin: 0.5em;
+            background: variables.$accent-color;
+
+            svg {
+                display: flex;
+                font-size: 1.25em;
+                color: variables.$dominant-color;
+            }
+
+            .loading {
+                border-radius: 50%;
+                border: 2px solid variables.$dominant-color;
+                border-bottom: 2px solid transparent;
+                width: 1.25em;
+                height: 1.25em;
+                animation: loading 1s linear infinite;
+
+                @keyframes loading {
+                    to {
+                        rotate: 360deg;
+                    }
+                }
+            }
+        }
+    }
+}

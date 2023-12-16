@@ -1,0 +1,27 @@
+@use '@/styles/_dirs/variables';
+
+.error404 {
+    padding: 0 2em;
+
+    &_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6.5em 0;
+        min-height: 550px;
+    }
+
+    &_title {
+        display: flex;
+        align-items: flex-end;
+
+        h1 {
+            font-size: calc(3em + 3vw);
+            color: variables.$secondary_color;
+        }
+
+        span {
+            font-size: 16px;
+        }
+    }
+}

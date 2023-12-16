@@ -1,0 +1,74 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.footer {
+    background-color: variables.$secondary-color;
+    color: variables.$dominant-color;
+    padding: 0 2em;
+
+    h1 {
+        color: variables.$dominant-color;
+    }
+
+    &_container {
+        padding: 2em 0 1em 0;
+    }
+
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 4em 0;
+
+        @media (max-width: 550px) {
+            flex-direction: column;
+            gap: 3em;
+            padding-bottom: 2em;
+        }
+    }
+
+    &_infos {
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+        max-width: 225px;
+        width: 100%;
+
+        @media (max-width: 550px) {
+            flex-direction: column;
+            gap: 1.5em;
+        }
+
+        .infos {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+
+            &_link {
+                display: flex;
+                gap: 0.75em;
+
+                svg {
+                    font-size: 1.25em;
+                }
+            }
+        }
+    }
+
+    &_logo {
+        @media (max-width: 550px) {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &_copyright {
+        display: flex;
+        justify-content: center;
+        padding: 2em 0;
+        border-top: 1px solid darken($color: variables.$dominant-color, $amount: 10);
+
+        p {
+            color: darken($color: variables.$dominant-color, $amount: 10);
+        }
+    }
+}

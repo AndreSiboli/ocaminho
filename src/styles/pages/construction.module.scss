@@ -1,0 +1,10 @@
+.construction {
+    padding: 0 2em;
+
+    &_container {
+        display: grid;
+        place-items: center;
+        min-height: 550px;
+        padding: 6.25em 0;
+    }
+}

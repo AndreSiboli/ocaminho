@@ -1,0 +1,88 @@
+@use '@/styles/_dirs/variables';
+
+.book {
+    padding: 5em 0;
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        min-height: 500px;
+        padding: 0 2em;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    &_loading {
+        display: grid;
+        place-items: center;
+        padding: 6.25em;
+    }
+
+    .book_wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        width: 100%;
+        position: relative;
+        padding-bottom: 3.5em;
+
+        .book_buttons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            max-width: 650px;
+            width: 100%;
+            pointer-events: none;
+            height: 100%;
+
+            button {
+                position: sticky;
+                right: 500px;
+                top: 50%;
+                border: 1px solid lighten($color: #000, $amount: 70);
+                background-color: variables.$dominant-color;
+                border-radius: 50%;
+                cursor: pointer;
+                padding: 1em;
+                pointer-events: auto;
+
+                @media (max-width: 650px) {
+                    opacity: 0.6;
+                }
+
+                svg {
+                    display: flex;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+
+    &_verses {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        max-width: 500px;
+        width: 100%;
+
+        .verse {
+            font-size: 1.1em;
+            line-height: 1.5em;
+
+            span {
+                font-size: 0.8em;
+                color: lighten($color: variables.$secondary_color, $amount: 25);
+            }
+        }
+    }
+
+    &_notFound {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7em 0;
+    }
+}

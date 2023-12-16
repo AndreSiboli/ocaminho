@@ -1,0 +1,19 @@
+@use '@/styles/_dirs/mixins' as mix;
+@use '@/styles/_dirs/variables';
+
+.link {
+    white-space: nowrap;
+    transition: color 0.25s ease-in-out, background-color 0.15s ease-in-out;
+    padding: 0.25em 0.5em;
+
+    @include mix.DesktopHover {
+        &:hover {
+            border-left: 0.25em solid variables.$secondary-color;
+            padding-left: 0.25em;
+
+             @media (max-width: 900px){
+                border-color: variables.$dominant-color;
+            }
+        }
+    }
+}

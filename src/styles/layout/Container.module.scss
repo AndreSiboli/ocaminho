@@ -1,0 +1,8 @@
+@use "@/styles/_dirs/variables";
+
+.container{
+    max-width: variables.$container;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}

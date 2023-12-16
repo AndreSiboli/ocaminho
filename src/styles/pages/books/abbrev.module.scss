@@ -1,0 +1,102 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.abbrev {
+    padding: 0 2em;
+
+    &_container {
+        padding: 6.25em 0;
+        min-height: 550px;
+    }
+
+    &_book {
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 5em;
+        }
+
+        .abbrev_wrapper {
+            flex: 1 1 60%;
+        }
+
+        .book_info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            max-width: 500px;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            h1 {
+                margin-bottom: 0.25em;
+            }
+
+            p {
+                span {
+                    font-weight: bold;
+                }
+
+                &.paragraph_comment {
+                    line-height: 1.5em;
+                    text-align: justify;
+                }
+            }
+        }
+
+        .book_verses {
+            flex: 1 1 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            @media (max-width: 768px) {
+                flex: auto;
+            }
+
+            .book_number {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(30px, (100% / 15)));
+                gap: 1em;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                    height: fit-content;
+                }
+            }
+
+            a {
+                width: fit-content;
+                aspect-ratio: 1/1;
+                padding: 0.5em;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                text-align: center;
+                transition: 0.25s ease-in-out;
+
+                @include mix.DesktopHover {
+                    &:hover {
+                        background-color: variables.$secondary_color;
+                        color: variables.$dominant_color;
+                    }
+                }
+            }
+        }
+    }
+
+    &_notFound {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        min-height: 300px;
+    }
+}

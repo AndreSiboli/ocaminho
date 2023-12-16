@@ -1,0 +1,27 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.navSearch {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    &_cancel {
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 0.75em;
+            border-radius: 1em;
+            transition: 0.15s ease-in-out;
+
+            @include mix.DesktopHover {
+                &:hover {
+                    background: variables.$secondary-color;
+                    color: variables.$dominant-color;
+                }
+            }
+        }
+    }
+}
