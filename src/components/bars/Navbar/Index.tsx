@@ -10,9 +10,11 @@ import Dropbar from '@/components/buttons/Dropdown/Index';
 import NavSearch from '@/components/bars/Navbar/NavSearch';
 import SearchButton from '@/components/form/SearchButton';
 import Menu from '@/components/bars/Navbar/Menu';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
     const { testament } = useContext(ApiContext);
+    const Router = useRouter()
     const [active, setActive] = useState(false);
     const [search, setSearch] = useState(false);
 
@@ -28,6 +30,10 @@ export default function Navbar() {
             window.onresize = null;
         };
     }, []);
+
+    useEffect(()=>{
+       if(active) defineActive()
+    }, [Router.query])
 
     function openSearch() {
         if (active) defineActive();

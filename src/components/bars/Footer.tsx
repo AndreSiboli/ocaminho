@@ -15,9 +15,14 @@ export default function Footer() {
                     <div className={styles.footer_wrapper}>
                         <div className={styles.footer_infos}>
                             <div className={styles.infos}>
-                                <h3>Project</h3>
+                                <h3>API</h3>
                                 <div className={styles.infos_link}>
-                                    <Link href="#">On Github</Link>
+                                    <Link
+                                        href="https://github.com/AndreSiboli/bible-api"
+                                        target="_blank"
+                                    >
+                                        On Github
+                                    </Link>
                                 </div>
                             </div>
                             <div className={styles.infos}>

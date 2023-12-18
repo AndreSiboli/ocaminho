@@ -18,7 +18,7 @@ export default function Select() {
     }
 
     return (
-        <select className={styles.select} onChange={changeVersion} defaultValue={version}>
+        <select className={styles.select} onChange={changeVersion} defaultValue={version} aria-label='Escolha a versão da bíblia'>
             {versions.map((opt) => (
                 <option value={opt.abbrev.toLowerCase()} key={opt.abbrev}>
                     {opt.name} {`(${opt.abbrev})`}

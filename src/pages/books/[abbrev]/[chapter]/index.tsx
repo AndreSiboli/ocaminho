@@ -88,13 +88,13 @@ export default function Book() {
                     <div className={styles.book_buttons}>
                         <ButtonImg
                             Svg={FaAngleLeft}
-                            label="Livro/Capitulo anterior"
+                            label="Botão para capítulo anterior"
                             handleFunction={() => nextChapter(-1)}
                         />
 
                         <ButtonImg
                             Svg={FaAngleRight}
-                            label="Livro/Capitulo posterior"
+                            label="Botão para capítulo posterior"
                             handleFunction={() => nextChapter(1)}
                         />
                     </div>

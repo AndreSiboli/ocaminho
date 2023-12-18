@@ -15,8 +15,10 @@ export default function ButtonImg(props: PropsTypes) {
     }
 
     return (
-        <div className={styles.book_button} aria-label={label}>
-            <button onClick={doSomething}>{<Svg />}</button>
+        <div className={styles.book_button}>
+            <button onClick={doSomething} aria-label={label}>
+                {<Svg />}
+            </button>
         </div>
     );
 }
